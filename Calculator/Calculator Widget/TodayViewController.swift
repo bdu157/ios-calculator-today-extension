@@ -8,27 +8,34 @@
 
 import UIKit
 import NotificationCenter
+import RNP
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var calculatorLabel: UILabel!
-    @IBOutlet weak var mainView: UIView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        
-        let label = UILabel()
-        label.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
-        label.text = "Hello there!"
-        mainView.addSubview(label)
         
         
         completionHandler(NCUpdateResult.newData)
     }
     
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        switch activeDisplayMode {
+        case .compact:
+            preferredContentSize = maxSize
+        case .expanded:
+            preferredContentSize = CGSize(width: maxSize.width, height: 330)
+        @unknown default:
+            break
+        }
+    }
+    
 }
+
