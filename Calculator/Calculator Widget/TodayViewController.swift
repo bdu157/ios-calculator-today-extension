@@ -10,18 +10,23 @@ import UIKit
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-        
+    
+    @IBOutlet weak var calculatorLabel: UILabel!
+    @IBOutlet weak var mainView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
         
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
+        let label = UILabel()
+        label.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        label.text = "Hello there!"
+        mainView.addSubview(label)
+        
         
         completionHandler(NCUpdateResult.newData)
     }
