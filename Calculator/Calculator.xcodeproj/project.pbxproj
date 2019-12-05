@@ -11,6 +11,8 @@
 		0B0655902398A6D9006F8D1C /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06558F2398A6D9006F8D1C /* TodayViewController.swift */; };
 		0B0655932398A6D9006F8D1C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B0655912398A6D9006F8D1C /* MainInterface.storyboard */; };
 		0B0655972398A6D9006F8D1C /* Calculator Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0B06558B2398A6D9006F8D1C /* Calculator Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0B06559C2398A830006F8D1C /* RNP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B17C660232737CD0021AB4F /* RNP.framework */; };
+		0B06559D2398A830006F8D1C /* RNP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B17C660232737CD0021AB4F /* RNP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B17C649232737340021AB4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B17C648232737340021AB4F /* AppDelegate.swift */; };
 		0B17C64E232737340021AB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B17C64C232737340021AB4F /* Main.storyboard */; };
 		0B17C650232737390021AB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B17C64F232737390021AB4F /* Assets.xcassets */; };
@@ -27,6 +29,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0B06558A2398A6D9006F8D1C;
 			remoteInfo = "Calculator Widget";
+		};
+		0B06559F2398A862006F8D1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B17C65B232737CD0021AB4F /* RNP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B17C630232736C50021AB4F;
+			remoteInfo = RNP;
 		};
 		0B17C65F232737CD0021AB4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -54,6 +63,17 @@
 				0B0655972398A6D9006F8D1C /* Calculator Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0B06559E2398A830006F8D1C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B06559D2398A830006F8D1C /* RNP.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B17C665232738190021AB4F /* Embed Frameworks */ = {
@@ -91,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B06558D2398A6D9006F8D1C /* NotificationCenter.framework in Frameworks */,
+				0B06559C2398A830006F8D1C /* RNP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,10 +195,12 @@
 				0B0655872398A6D9006F8D1C /* Sources */,
 				0B0655882398A6D9006F8D1C /* Frameworks */,
 				0B0655892398A6D9006F8D1C /* Resources */,
+				0B06559E2398A830006F8D1C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0B0655A02398A862006F8D1C /* PBXTargetDependency */,
 			);
 			name = "Calculator Widget";
 			productName = "Calculator Widget";
@@ -305,6 +328,11 @@
 			target = 0B06558A2398A6D9006F8D1C /* Calculator Widget */;
 			targetProxy = 0B0655952398A6D9006F8D1C /* PBXContainerItemProxy */;
 		};
+		0B0655A02398A862006F8D1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RNP;
+			targetProxy = 0B06559F2398A862006F8D1C /* PBXContainerItemProxy */;
+		};
 		0B17C664232738190021AB4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RNP;
@@ -431,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -486,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -504,6 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C22Z4773SH;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,6 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C22Z4773SH;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
